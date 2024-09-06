@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Go Robot Go</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+
+<body class="bg-slate-700">
+  <div class='game container mx-auto'>
+    <div class='rounded shadow-lg container bg-gradient-to-r from-cyan-500 to-blue-500'>
+      <h1 class=' text-slate-800 text-4xl p-1 font-semibold'>Go Robot Go</h1>
+    </div>
+    <main>
+      <div class='level container'>
+        <div class='w-24  drop-shadow-md'>
+          <img class='object-contain' src='./images/robot.png'>
+        </div>
+      </div>
+      <div class='programming mt-12'>
+        <div class='rounded shadow-lg container mx-auto bg-gradient-to-r from-cyan-500 to-blue-500'>
+          <h2 class='text-slate-800 text-xl p-1 font-semibold'>Program ...</h2>
+        </div>
+        <div class='program'>
+          <div class='w-12 container'>
+            <img class='object-contain' src='./images/program_pos_arrow.png'>
+          </div>
+        </div>
+        <div class='instructions container'>
+          <div class='w-12 container'>
+            <img class='object-contain' src='./images/ins_move.png'>
+          </div>
+          <div class='w-12 container'>
+            <img class='object-contain' src='./images/ins_jump.png'>
+          </div>
+          <button class='px-3 drop-shadow-xl rounded-full bg-gradient-to-r from-cyan-500 to-blue-500'>
+            Send program and restart
+          </button>
+          <button
+            class='text-2xl px-3 drop-shadow-xl rounded-full bg-gradient-to-r from-cyan-500 to-blue-500'>Go!</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
