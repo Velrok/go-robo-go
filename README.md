@@ -2,7 +2,7 @@
 
 A hopefully kid friendly game to learn programming.
 
-<img width="1095" alt="Screenshot 2024-09-07 at 00 26 52" src="https://github.com/user-attachments/assets/ca1b6635-6278-4cc5-9fd9-c435924ff8d1">
+<img width="1085" alt="Screenshot 2024-09-20 at 22 44 06" src="https://github.com/user-attachments/assets/4c5a1e92-ae81-4546-a95d-d9c4d3e4a601">
 
 
 # DEV
