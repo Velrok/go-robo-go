@@ -26,6 +26,8 @@ let robot = {
   img: null,
   img_scale: null,
   position: 0,
+  x_offset: 0,
+  y_offset: 0,
   program: ["M", "M", "J"],
   program_counter: 0,
 };
@@ -43,7 +45,20 @@ function setup() {
 
   robot.img_scale = 1 / (robot.img.height / height) / 3;
 
+  setup_animate_move();
+
   hydrate_robot_programm();
+}
+
+let animate_move = null;
+function setup_animate_move() {
+  animate_move = p5.tween.manager
+    .addTween(robot, "tween1")
+    .addMotion("x_offset", chunk_width, 500, "easeInOutQuint")
+    .onEnd((_) => {
+      robot.position += 1;
+      robot.x_offset = 0;
+    });
 }
 
 function hydrate_robot_programm() {
@@ -82,9 +97,35 @@ function draw_goal() {
 function draw_robot() {
   image(
     robot.img,
-    0,
-    chunk_height,
+    robot.position * chunk_width + robot.x_offset,
+    chunk_height + robot.y_offset,
     robot.img.width * robot.img_scale,
     robot.img.height * robot.img_scale
   );
+}
+
+function robot_next() {
+  const program_index = robot.program_counter % robot.program.length;
+  const instruction = robot.program[program_index];
+  apply_instruction(instruction);
+  robot.program_counter += 1;
+}
+
+function robot_move() {
+  animate_move.startTween();
+}
+
+function robot_jump() {
+  robot.position += 2;
+}
+
+function apply_instruction(instruction) {
+  switch (instruction) {
+    case "M":
+      robot_move();
+      break;
+    case "J":
+      robot_jump();
+      break;
+  }
 }
